@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+
 int main() {
     char estado_letra= 'a';
     char codigo[4];
     char cidade[50];
-    unsigned long int populacao = 10;
+    unsigned long int populacao = 70;
     float area = 10;
     double pib = 10;
     int pturismo = 10;
@@ -15,7 +16,7 @@ int main() {
     float denpoder , denpoder2 ;
     float respopulacao , resarea , respib, respturismo;
     float resultadopoder , resultadoDensidade ;
-    int jogo1;
+    int jogo1, jogo2;
 
     
     
@@ -119,66 +120,125 @@ int main() {
     printf("Per capta: %f \n", percapta2 );
 
     //Menu para o jogador escolher um atributo:
-    printf("Jogador 1 - Escolha um atributo:\n");
-    printf("1. cidade\n");
-    printf("2. população\n");
-    printf("3. Área\n");
-    printf("4. PIB\n");
-    printf("5. Turismo\n");
-    printf("6. Densidade\n");
-    printf("7. Percapta\n");
-    printf("8. Super poder\n");
-    scanf("%d", &jogo1);
+    printf("Jogador 1 - Escolha 2 atributos:\n");
+    printf("1. população\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Turismo\n");
+    printf("5. Densidade\n");
+    printf("6. Percapta\n");
+    printf("7. Super poder\n");
 
-    switch (jogo1){
-        case 1:{
-            if(area > area2){
-                printf("Carta 1  venceu\n");
-            } else {
-                printf("Carta 2 venceu !!! \n");
-            }
+    printf("Escolha o primeiro atributo:\n");
+    scanf("%d", &jogo1);
+    
+
+    switch(jogo1)
+    {
+        case 1:
+        printf("Você escolheu população\n");
+        jogo1  = populacao > populacao2 ? 1 : 0;
+            break;
+
+        case 2:
+        printf("Você escolheu a opção área\n");
+        jogo1 = area > area2 ? 1 : 0;
+            break;
+
+        case 3:
+            printf("Você escolheu PIB\n");
+            jogo1 = pib > pib2 ? 1 : 0;
+            break;
+
+        case 4:
+            printf("Você escolheu Turismo\n");
+            jogo1 = pturismo > pturismo2 ? 1 : 0;
+            break;
+
+        case 5:
+            printf("Você escolheu Densidade");
+            jogo1 = densip < densip2 ? 1 : 0;
+            break;
+
+        case 6:
+            printf("Você escolheu Renda p capta\n");
+            jogo1 = percapta > percapta2 ? 1 : 0;
+            break;
+
+        case 7:
+            printf("Você escolheu SUPERPODER\n");
+            jogo1 = superpoder > superpoder2 ? 1 : 0;
+            break;
+
+            default:
+            printf("Opção não permitida!\n");
             break;
         }
-        case 2:{
-            if(pib > pib2){
-                printf("Carta 1 venceu\n");
-            } else  {
-                printf("Carta 2 venceu \n");
-            }
+
+    printf("Escolha o segundo atributo:\n");
+    scanf("%d", &jogo2);
+    printf("1. população\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Turismo\n");
+    printf("5. Densidade\n");
+    printf("6. Percapta\n");
+    printf("7. Super poder\n");
+
+    switch(jogo2)
+    {
+        case 1:
+        printf("Você escolheu população\n");
+        jogo2  = populacao > populacao2 ? 1 : 0;
             break;
-        }case 3:{
-            if(pturismo > pturismo2){
-                printf("Carta 1 venceu!!\n");
-            } else {
-                printf("carta 2 venceu!! \n");
-            }
+
+        case 2:
+        printf("Você escolheu a opção área\n");
+        jogo2 = area > area2 ? 1 : 0;
             break;
-        }case 4:{
-            if(densip < densip2){
-                printf("Carta 1 venceu!! \n");
-            } else {
-                printf("carta 2 venceu!!");
-            }
+
+        case 3:
+            printf("Você escolheu PIB\n");
+            jogo2 = pib > pib2 ? 1 : 0;
             break;
-        }case 5:{
-            if(percapta > percapta2){
-                printf("Carta 1 venceu!! \n");
-            } else {
-                printf("Carta 2 venceu!! \n");
-            }
+
+        case 4:
+            printf("Você escolheu Turismo\n");
+            jogo2 = pturismo > pturismo2 ? 1 : 0;
             break;
-        }case 6:{
-            if(superpoder > superpoder2){
-                printf("carta 1 venceu!! \n");
-            } else {
-                printf("Carta 2 venceu!! \n");
-            }
+
+        case 5:
+            printf("Você escolheu Densidade");
+            jogo2 = densip < densip2 ? 1 : 0;
             break;
-        default:
-            printf("Opção não permitida!!\n");
-                   
-        } 
-    }
+
+        case 6:
+            printf("Você escolheu Renda p capta\n");
+            jogo2 = percapta > percapta2 ? 1 : 0;
+            break;
+
+        case 7:
+            printf("Você escolheu SUPERPODER\n");
+            jogo2 = superpoder > superpoder2 ? 1 : 0;
+            break;
+
+            default:
+            printf("Opção não permitida!\n");
+            break;
+        }
+
+        if (jogo1 && jogo2)
+        {
+           printf("Parabéns, você ganhou!!! \n"); 
+        } else if (jogo1 != jogo2)
+        {
+            printf("Empatou!!!\n");
+        } else {
+            printf("Nossa, você perdeu!\n");
+        }
+
+    
+}
 
     //Menu interativo para o segundo jogador:
     /*Printf("Jogador 2 - Escolha um atributo :\n");
@@ -221,7 +281,7 @@ int main() {
             {
             printf("Opção não aceita\n"); 
             }*/   
-        } 
+         
     
 
         //Resultado vencedor: Parte do exercício anterior, não utilizar agora.
